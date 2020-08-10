@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, dialog } = require('electron');
 let mainWindow = null;
 
 app.on('ready', ()=> {
@@ -6,9 +6,17 @@ app.on('ready', ()=> {
 
     mainWindow.loadFile(`${__dirname}/index.html`);
 
+    getFileFromUser();
+
     mainWindow.once('ready-to-show', () => {
         mainWindow.show();
     });
 });
 
-console.log('Starting up...');
+const getFileFromUser = () =>{
+    const files = dialog.showOpenDialog({
+        properties: ['openFile']
+    });
+
+    console.log(files);
+};
