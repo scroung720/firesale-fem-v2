@@ -18,5 +18,7 @@ const getFileFromUser = () =>{
         properties: ['openFile']
     });
 
+    if (!files) return;
+
     console.log(files);
 };
