@@ -14,7 +14,7 @@ app.on('ready', ()=> {
     });
 });
 
-const getFileFromUser = () =>{
+exports.getFileFromUser = () => {
     const files = dialog.showOpenDialog({
         properties: ['openFile'],
         buttonLabel: 'Unveil',
