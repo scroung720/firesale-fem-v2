@@ -1,4 +1,7 @@
+const fs = require('fs');
+
 const { app, BrowserWindow, dialog } = require('electron');
+
 let mainWindow = null;
 
 app.on('ready', ()=> {
@@ -20,5 +23,8 @@ const getFileFromUser = () =>{
 
     if (!files) return;
 
-    console.log(files);
+    const file = files[0];
+    const content = fs.readFileSync(file).toString();
+
+    console.log(content);
 };
