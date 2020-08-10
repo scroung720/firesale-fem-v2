@@ -9,8 +9,6 @@ app.on('ready', ()=> {
 
     mainWindow.loadFile(`${__dirname}/index.html`);
 
-    getFileFromUser();
-
     mainWindow.once('ready-to-show', () => {
         mainWindow.show();
     });
