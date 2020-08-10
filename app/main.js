@@ -3,6 +3,8 @@ let mainWindow = null;
 
 app.on('ready', ()=> {
     mainWindow = new BrowserWindow();
+
+    mainWindow.loadFile(`${__dirname}/index.html`);
 });
 
 console.log('Starting up...');
