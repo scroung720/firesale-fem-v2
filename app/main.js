@@ -32,6 +32,21 @@ exports.getFileFromUser = () => {
     openFile(file);
 };
 
+exports.exportHtml = (content) => {
+    file = dialog.showSaveDialog({
+        title: 'Save HTML',
+        defaultPath: app.getPath('desktop'),
+        filters: [
+            {
+                name: 'html format',
+                extensions: ['html']
+            }
+        ]
+    });
+
+    fs.writeFileSync(file, content);
+};
+
 exports.saveMarkdown = (file, content) => {
     if (!file){
         file = dialog.showSaveDialog({

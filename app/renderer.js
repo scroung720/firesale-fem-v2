@@ -37,8 +37,8 @@ const updateUserInterface = (isEdited) => {
   if (filePath) currentWindow.setRepresentedFilename(filePath);
   currentWindow.setDocumentEdited(isEdited);
 
-  saveMarkdownButton.disabled = !isEdited;
   revertButton.disabled = !isEdited;
+  saveMarkdownButton.disabled = !isEdited;
 
   currentWindow.setTitle(title);
 };
@@ -53,6 +53,10 @@ markdownView.addEventListener('keyup', event => {
 
 openFileButton.addEventListener('click', () => {
   mainProcess.getFileFromUser();
+});
+
+saveHtmlButton.addEventListener('click', () => {
+  mainProcess.exportHtml(htmlView.innerHTML);
 });
 
 saveMarkdownButton.addEventListener('click', () => {
