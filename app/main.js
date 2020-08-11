@@ -32,6 +32,10 @@ exports.getFileFromUser = () => {
     openFile(file);
 };
 
+exports.saveMarkdown = (file, content) => {
+    fs.writeFileSync(file, content);
+};
+
 const openFile = (file) => {
     const content = fs.readFileSync(file).toString();
     app.addRecentDocument(file);
