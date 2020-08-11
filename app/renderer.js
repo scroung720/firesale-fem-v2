@@ -5,7 +5,6 @@ const { ipcRenderer, remote } = require('electron');
 
 let filePath = null;
 let originalContent = '';
-let isEdited = false;
 
 const mainProcess = remote.require('./main');
 const currentWindow = remote.getCurrentWindow();
