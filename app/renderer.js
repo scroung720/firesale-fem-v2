@@ -32,11 +32,13 @@ const updateUserInterface = (isEdited) => {
   }
 
   if (isEdited) {
-    currentWindow.setTitle(`${String.fromCodePoint(0x1F60E)} ${title}`);
+    title = `${String.fromCodePoint(0x1F60E)} ${title}`
   }
-  else{
-    currentWindow.setTitle(title);
-  }
+
+  saveMarkdownButton.disabled = !isEdited;
+  revertButton.disabled = !isEdited;
+
+  currentWindow.setTitle(title);
 };
 
 markdownView.addEventListener('keyup', event => {
