@@ -49,6 +49,7 @@ exports.saveMarkdown = (file, content) => {
     if (!file) return;
 
     fs.writeFileSync(file, content);
+    openFile(file);
 };
 
 const openFile = (file) => {

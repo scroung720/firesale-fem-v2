@@ -67,5 +67,5 @@ ipcRenderer.on('file-opened', (event, file, content) => {
   markdownView.value = content;
   renderMarkdownToHtml(content);
 
-  updateUserInterface(isEdited);
+  updateUserInterface(false);
 });
