@@ -44,6 +44,8 @@ exports.exportHtml = (content) => {
         ]
     });
 
+    if (!file) return;
+
     fs.writeFileSync(file, content);
 };
 
