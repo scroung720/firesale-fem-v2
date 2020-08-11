@@ -35,7 +35,7 @@ const updateUserInterface = (isEdited) => {
     title = `${String.fromCodePoint(0x1F60E)} ${title}`
   }
 
-  currentWindow.setRepresentedFilename(filePath);
+  if (filePath) currentWindow.setRepresentedFilename(filePath);
   currentWindow.setDocumentEdited(isEdited);
 
   saveMarkdownButton.disabled = !isEdited;

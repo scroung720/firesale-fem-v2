@@ -33,6 +33,21 @@ exports.getFileFromUser = () => {
 };
 
 exports.saveMarkdown = (file, content) => {
+    if (!file){
+        file = dialog.showSaveDialog({
+            title: 'Save Markdown',
+            defaultPath: app.getPath('desktop'),
+            filters: [
+                {
+                    name: 'Markdown Files',
+                    extensions: ['md', 'markdown', 'mdown', 'marcdown']
+                }
+            ]
+        });
+    }
+
+    if (!file) return;
+
     fs.writeFileSync(file, content);
 };
 
